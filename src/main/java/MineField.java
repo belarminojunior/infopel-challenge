@@ -16,20 +16,20 @@ public class MineField {
         revealed = new boolean[rows][columns];
         placeMines();
         calculateNumbers();
-        printBoard();
+        // printBoard();
     }
 
-    void printBoard() {
-        for (int[] lines : board) {
-            System.out.println(Arrays.toString(lines));
-        }
-    }
+    // void printBoard() {
+    // for (int[] lines : board) {
+    // System.out.println(Arrays.toString(lines));
+    // }
+    // }
 
     void placeMines() {
         int counter = 0;
         while (counter != numOfMines) {
-            int randRow = (int)(Math.random() * this.rows);
-            int randCols = (int)(Math.random() * this.columns);
+            int randRow = (int) (Math.random() * this.rows);
+            int randCols = (int) (Math.random() * this.columns);
 
             if (board[randRow][randCols] != MINE) {
                 this.board[randRow][randCols] = MINE;
@@ -49,18 +49,18 @@ public class MineField {
             }
         }
     }
-    
+
     int countAdjacentMines(int r, int c) {
         int count = 0;
 
-        // Same row
+        // Same row (r)
         for (int col = 0; col < columns; col++) {
             if (col != c && board[r][col] == MINE) {
                 count++;
             }
         }
 
-        // Same column
+        // Same column (c)
         for (int row = 0; row < rows; row++) {
             if (row != r && board[row][c] == MINE) {
                 count++;
@@ -110,7 +110,7 @@ public class MineField {
         revealed[r][c] = true;
 
         if (board[r][c] == MINE) {
-            return false;  // Mine was hit
+            return false; // Mine was hit
         } else if (board[r][c] == 0) {
             for (int i = -1; i <= 1; i++) {
                 for (int j = -1; j <= 1; j++) {
@@ -120,7 +120,4 @@ public class MineField {
         }
         return true;
     }
-
-
-
 }

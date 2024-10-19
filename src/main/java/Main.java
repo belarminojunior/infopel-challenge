@@ -12,7 +12,7 @@ public class Main {
         int rows = validateSize("Rows: ", 2, Integer.MAX_VALUE);
         int columns = validateSize("Columns: ", 2, Integer.MAX_VALUE);
 
-        int numberOfMines = (int)(Math.random() * (Math.sqrt(rows * columns)) + 1);
+        int numberOfMines = (int) (Math.random() * (Math.sqrt(rows * columns)) + 1);
         System.out.println(numberOfMines + " Mines in the Field");
 
         MineField game = new MineField(rows, columns, numberOfMines);
@@ -32,6 +32,7 @@ public class Main {
             }
         }
     }
+
     static int validateSize(String msg, int min, int max) {
         int inputNumber = 0;
 
@@ -51,6 +52,3 @@ public class Main {
     }
 
 }
-
-
-
