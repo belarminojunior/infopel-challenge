@@ -12,7 +12,7 @@ public class Main {
         int rows = validateSize("Rows: ", 2, Integer.MAX_VALUE);
         int columns = validateSize("Columns: ", 2, Integer.MAX_VALUE);
 
-        int numberOfMines = (int) (Math.random() * (Math.sqrt(rows * columns)) + 1);
+        int numberOfMines = (int) (Math.random() * (rows * columns));
         System.out.println(numberOfMines + " Mines in the Field");
 
         MineField game = new MineField(rows, columns, numberOfMines);
